@@ -27,15 +27,15 @@ namespace HomeWork.Models.ViewModel
         //這個最正常了
         //[Email(ErrorMessage = "EmailEmail格式錯誤")]
         
-        //Client顯示訊息【Account StringLength欄位最少 10 個字，最多 20 個字】
-        //Server顯示訊息【Account StringLength欄位最少 10 個字，最多 20 個字】
-        //[StringLength(20, MinimumLength = 10, ErrorMessage = "{0} StringLength欄位最少 {2} 個字，最多 {1} 個字")]//最多20個字、最少4個字                                              
+        //Client顯示訊息【Account 欄位最少 10 個字，最多 20 個字】
+        //Server顯示訊息【Account 欄位最少 10 個字，最多 20 個字】
+        //[(20, MinimumLength = 10, ErrorMessage = "{0} 欄位最少 {2} 個字，最多 {1} 個字")]//最多20個字、最少4個字                                              
 
         //Server
         //[Required]
 
         [Required]
-        [StringLength(20, MinimumLength = 10, ErrorMessage = "{0} StringLength欄位最少 {2} 個字，最多 {1} 個字")]//最多20個字、最少4個字                                              
+        [(20, MinimumLength = 10, ErrorMessage = "{0} 欄位最少 {2} 個字，最多 {1} 個字")]//最多20個字、最少4個字                                              
         [Display(Name = "Email")]
         [Email(ErrorMessage = "Email格式錯誤")]
         [NoIs("skilltree,demo,twMVC", ErrorMessage = "請使用別的名稱")]
