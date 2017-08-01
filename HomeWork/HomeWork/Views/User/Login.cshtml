@@ -1,4 +1,4 @@
-﻿@model HomeWork.Models.ViewModel.LoginViewModel
+﻿@model test1.ViewModels.LoginViewModel
 
 @{
     ViewBag.Title = "Login";
@@ -6,11 +6,10 @@
 
 <h2>Login</h2>
 
-
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>LoginViewModel</h4>
         <hr />
@@ -37,6 +36,8 @@
             </div>
         </div>
     </div>
+
+    @Html.Hidden("hidMessage", @Model?.Message)
 }
 
 <div>
@@ -68,6 +69,8 @@
     @if (Model != null &&
         !string.IsNullOrWhiteSpace(Model.Message))
     {
-        <script>toastr.success('@Model.Message');</script>
+        <script>toastr.success($('#hidMessage').val());</script>
+        @*<script>toastr.success(hidMessage.value);</script>*@
+        @*<script>toastr.success('@Model.Message');</script>*@
     }
 }
